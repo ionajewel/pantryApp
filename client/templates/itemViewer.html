@@ -2,9 +2,7 @@
   <div class="item-viewer-details media-body">
     <h3>{{$ctrl.item.name}}</h3>
     <div>Brand: {{$ctrl.item.brand}}</div>
-    <div>Quantity: {{$ctrl.item.quantity}}</div>
-    <div>Units: {{$ctrl.item.units}}</div>
-    <div>Expiration: {{$ctrl.item.expiration}}</div>
-    <button class="btn">delete this item</button>
+    <div>Quantity: {{$ctrl.item.quantity}} {{$ctrl.item.units}}</div>
+    <button class="btn" ng-click="$ctrl.deleteItem()">delete this item</button>
   </div>
 </div>

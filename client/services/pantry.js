@@ -2,7 +2,7 @@ angular.module('pantry-app')
 
   .service('pantry', function($http) {
     this.add = (item, cb) => {
-      $http.post('http://127.0.0.1:3000/pantryItems', { item })
+      $http.post('http://127.0.0.1:3000/pantryItems', {item})
         .then(this.fetch(cb));
     };
     this.fetch = (cb) => {
@@ -10,5 +10,9 @@ angular.module('pantry-app')
         .then((items) => {
           cb(items.data);
         });
+    };
+    this.delete = (itemId, cb) => {
+      $http.delete('http://127.0.0.1:3000/pantryItems/:' + itemId)
+        .then(this.fetch(cb));
     };
   });

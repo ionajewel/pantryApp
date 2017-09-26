@@ -43,4 +43,12 @@ app.post('/pantryItems', (req, res) => {
     });
 });
 
+app.delete('/pantryItems/:itemId', (req, res) => {
+  var id = req.params.itemId.slice(1);
+  PantryItem.remove({_id: id}, (err) => {
+    if (!err) { console.log('Item deleted.'); }
+  });
+  res.sendStatus(202);
+});
+
 module.exports = app;

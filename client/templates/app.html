@@ -2,7 +2,6 @@
     <div class="jumbotron">
       <h1 class="display-3">Welcome to the pantry app!</h1>
       <p class="lead">Input and track your pantry items.</p>
-      <hr class="my-4">
       <p>Upcoming features include search, update, and automated shopping list.</p>
   </div>
     <div class="row">
@@ -12,7 +11,7 @@
       <div class="col-lg-6">
         <div class="row">
           <div class="col">
-            <item-viewer item="$ctrl.currentItem"/>
+            <item-viewer item="$ctrl.currentItem" on-delete="$ctrl.fetchResults"/>
           </div>
         </div>
         <div class="row">
