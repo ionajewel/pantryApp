@@ -21,7 +21,7 @@ app.get('/pantryItems', (req, res) => {
 
 app.post('/pantryItems', (req, res) => {
   var newItem = req.body.item;
-  PantryItem.findOne({name: newItem.name})
+  PantryItem.findOne({name: newItem.name, brand: newItem.brand})
     .exec((err, item) => {
       if (!item) {
         var newPantryItem = new PantryItem({
@@ -29,18 +29,16 @@ app.post('/pantryItems', (req, res) => {
           brand: newItem.brand,
           quantity: newItem.quantity,
           units: newItem.units,
-          expiration: newItem.expiration
         });
         newPantryItem.save((err, itemData) => {
           if (err) {
             res.status(500).send(err);
+          } else {
+            res.status(201).send(itemData);
           }
-          console.log('New item saved to database');
-          res.send(itemData);
         });
       } else {
-        console.log('Item already exists');
-        res.send(newItem);
+        res.send(item);
       }
     });
 });

@@ -1,16 +1,18 @@
 angular.module('pantry-app')
 
   .controller('ItemCreatorController', function(pantry) {
-    this.createItem = () => {
+    this.createItem = (form) => {
       var newItem = {
         name: this.name,
         brand: this.brand,
         quantity: this.quantity,
         units: this.units,
-        expiration: this.expiration
       };
-      pantry.add(newItem);
-      pantry.fetch(this.onCreate);
+      pantry.add(newItem, this.onCreate);
+      this.name = '';
+      this.brand = '';
+      this.quantity = '';
+      this.units = '';
     };
   })
   .component('itemCreator', {

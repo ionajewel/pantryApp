@@ -1,12 +1,9 @@
 angular.module('pantry-app')
 
   .controller('AppCtrl', function(pantry) {
-    this.items = window.examplePantryData;
-    this.currentItem = window.examplePantryData[0];
-
     this.fetchResults = (data) => {
       this.items = data;
-      this.currentItem = data[0];
+      this.currentItem = data[data.length - 1];
     };
 
     this.selectItem = (item) => {

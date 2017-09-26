@@ -6,8 +6,6 @@ var pantryItemSchema = mongoose.Schema({
   brand: String,
   quantity: Number,
   units: String,
-  expiration: Date,
-  addToList: Boolean
 });
 
 var PantryItem = mongoose.model('PantryItem', pantryItemSchema);

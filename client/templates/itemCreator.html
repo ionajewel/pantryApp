@@ -1,5 +1,5 @@
 <div class="item-creator">
-    <form role="form" method="post">
+    <form>
         <div class="form-group ">
           <label for="item-name" class="control-label">Item Name</label>
           <div class="col-10">
@@ -32,13 +32,6 @@
             <option value="g">g</option>
             <option value="units">units</option>
           </select>
-      </div>
-
-      <div class="form-group ">
-        <label for="expiration-date" class="control-label">Expiration Date</label>
-        <div class="col-10">
-          <input class="form-control" type="date" id="expiration-date" ng-model="$ctrl.date">
-        </div>
       </div>
       <button type="submit" class="btn btn-primary" ng-click="$ctrl.createItem()">Create New Pantry Item</button>
     </form>
