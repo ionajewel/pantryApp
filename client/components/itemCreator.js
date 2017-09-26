@@ -10,12 +10,13 @@ angular.module('pantry-app')
         expiration: this.expiration
       };
       pantry.add(newItem);
+      pantry.fetch(this.onCreate);
     };
   })
   .component('itemCreator', {
 
     bindings: {
-      onSubmit: '<'
+      onCreate: '<'
     },
     controller: 'ItemCreatorController',
     templateUrl: 'client/templates/itemCreator.html'

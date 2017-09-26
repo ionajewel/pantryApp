@@ -13,27 +13,34 @@ app.get('/', (req, res) => {
   res.send(200);
 });
 
-app.post('/pantryItems', (req, res) => {
-  console.log(req.body);
+app.get('/pantryItems', (req, res) => {
+  PantryItem.find({}).exec((err, items) => {
+    res.send(items);
+  });
+});
 
-  PantryItem.findOne({name: req.name})
+app.post('/pantryItems', (req, res) => {
+  var newItem = req.body.item;
+  PantryItem.findOne({name: newItem.name})
     .exec((err, item) => {
       if (!item) {
-        var newItem = new PantryItem({
-          name: req.body.name,
-          brand: req.body.brand,
-          quantity: req.body.quantity,
-          units: req.body.units,
-          expiration: req.body.expiration
+        var newPantryItem = new PantryItem({
+          name: newItem.name,
+          brand: newItem.brand,
+          quantity: newItem.quantity,
+          units: newItem.units,
+          expiration: newItem.expiration
         });
-        newItem.save((err, newUser) => {
+        newPantryItem.save((err, itemData) => {
           if (err) {
             res.status(500).send(err);
           }
+          console.log('New item saved to database');
+          res.send(itemData);
         });
       } else {
         console.log('Item already exists');
-        res.send(item);
+        res.send(newItem);
       }
     });
 });
