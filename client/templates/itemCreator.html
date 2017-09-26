@@ -21,12 +21,6 @@
           </div>
       </div>
 
-      <div class="form-group ">
-        <label for="expiration-date" class="control-label">Expiration Date</label>
-        <div class="col-10">
-          <input class="form-control" type="date" id="expiration-date" ng-model="$ctrl.date">
-        </div>
-      </div>
 
       <div class="form-group ">
         <label for="units">Units</label>
@@ -40,6 +34,12 @@
           </select>
       </div>
 
-      <button type="submit" class="btn btn-primary">Create New Pantry Item</button>
+      <div class="form-group ">
+        <label for="expiration-date" class="control-label">Expiration Date</label>
+        <div class="col-10">
+          <input class="form-control" type="date" id="expiration-date" ng-model="$ctrl.date">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" ng-click="$ctrl.createItem()">Create New Pantry Item</button>
     </form>
 </div>
