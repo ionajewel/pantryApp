@@ -34,7 +34,7 @@ app.post('/pantryItems', (req, res) => {
           if (err) {
             res.status(500).send(err);
           } else {
-            res.status(201).send(itemData);
+            res.status(201).send(itemData._id);
           }
         });
       } else {

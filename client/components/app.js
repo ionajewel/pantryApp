@@ -1,9 +1,16 @@
 angular.module('pantry-app')
 
   .controller('AppCtrl', function(pantry) {
-    this.fetchResults = (data) => {
+    this.fetchResults = (data, id) => {
+      if (id) {
+        var setItem = data.filter((item) => {
+          return item._id === id;
+        })[0];
+      } else {
+        setItem = data[data.length - 1];
+      }
       this.items = data;
-      this.currentItem = data[data.length - 1];
+      this.currentItem = setItem;
     };
 
     this.selectItem = (item) => {
