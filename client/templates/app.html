@@ -1,0 +1,13 @@
+<div id="app container">
+  <nav class="navbar">
+  </nav>
+  <div class="row">
+    <div class="col-md-7">
+      <item-viewer item="$ctrl.currentItem"/>
+      <item-creator on-submit="$ctrl.onSubmit"/>
+    </div>
+    <div class="col-md-5">
+      <item-list items="$ctrl.items" on-click="$ctrl.selectItem"/>
+    </div>
+  <div>
+</div>
