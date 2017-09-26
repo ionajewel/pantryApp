@@ -19,7 +19,7 @@ body {
   background: #fff;
 }
 
-.search-bar .form-control {
+.search-bar {
   border-radius: 2px;
   width: 80%
 }
@@ -37,7 +37,7 @@ body {
   box-shadow: 0 1px 0 rgba(0,0,0,0.10);
 }
 
-.item-viewer {
+.item-viewer .item-creator {
   margin-left: 20px;
   margin-right: 20px;
 }

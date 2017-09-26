@@ -1,13 +1,21 @@
-<div id="app container">
-  <nav class="navbar">
-  </nav>
+<div class="container" id="app container">
   <div class="row">
     <div class="col-md-7">
-      <item-viewer item="$ctrl.currentItem"/>
+      <div class="row">
+        <div class="col-md-7">
+          <item-viewer item="$ctrl.currentItem"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <item-list items="$ctrl.items" on-click="$ctrl.selectItem"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5">
       <item-creator on-submit="$ctrl.onSubmit"/>
     </div>
-    <div class="col-md-5">
-      <item-list items="$ctrl.items" on-click="$ctrl.selectItem"/>
-    </div>
-  <div>
+  </div>
 </div>
