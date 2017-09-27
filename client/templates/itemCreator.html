@@ -1,4 +1,44 @@
-<div class="item-creator">
+<div class="item-creator" ng-if="$ctrl.itemToUpdate">
+    <form>
+        <div class="form-group ">
+          <label for="item-name" class="control-label">Item Name</label>
+          <div class="col-10">
+            <input class="form-control" type="text" id="item-name" ng-model="$ctrl.name" ng-init="$ctrl.name=$ctrl.itemToUpdate.name">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="brand" class="control-label">Brand</label>
+          <div class="col-10">
+            <input class="form-control" type="text" id="brand" ng-model="$ctrl.brand" ng-init="$ctrl.brand=$ctrl.itemToUpdate.brand">
+          </div>
+        </div>
+
+      <div class="form-group ">
+          <label for="quantity" class="control-label">Quantity</label>
+          <div class="col-10">
+            <input class="form-control" type="text" id="quantity" ng-model="$ctrl.quantity" ng-init="$ctrl.quantity=$ctrl.itemToUpdate.quantity">
+          </div>
+      </div>
+
+
+      <div class="form-group ">
+        <label for="units">Units</label>
+          <select class="custom-select" id="units" ng-model="$ctrl.units" ng-init="$ctrl.units=$ctrl.itemToUpdate.units">
+            <option value="fl oz">fl oz</option>
+            <option value="lb">lb</option>
+            <option value="oz">oz</option>
+            <option value="qt">qt</option>
+            <option value="g">g</option>
+            <option value="units">units</option>
+          </select>
+      </div>
+      <button type="submit" class="btn btn-primary" ng-click="$ctrl.createItem()">Create/Update Pantry Item</button>
+    </form>
+</div>
+
+
+<div class="item-creator" ng-if="!$ctrl.itemToUpdate">
     <form>
         <div class="form-group ">
           <label for="item-name" class="control-label">Item Name</label>

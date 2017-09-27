@@ -17,6 +17,10 @@ angular.module('pantry-app')
       this.currentItem = item;
     };
 
+    this.updateSelect = (item) => {
+      this.itemToUpdate = item;
+    };
+
     pantry.fetch(this.fetchResults);
 
   })

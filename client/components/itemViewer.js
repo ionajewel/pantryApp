@@ -2,7 +2,11 @@ angular.module('pantry-app')
 
   .controller('ItemViewerController', function(pantry) {
     this.deleteItem = () => {
-      pantry.delete(this.item._id, this.onDelete);
+      pantry.delete(this.item._id, this.onDeleteClick);
+    };
+
+    this.updateItem = () => {
+      this.onUpdateClick(this.item);
     };
   })
 
@@ -10,7 +14,8 @@ angular.module('pantry-app')
 
     bindings: {
       item: '<',
-      onDelete: '<'
+      onDeleteClick: '<',
+      onUpdateClick: '<'
     },
     controller: 'ItemViewerController',
     templateUrl: 'client/templates/itemViewer.html'

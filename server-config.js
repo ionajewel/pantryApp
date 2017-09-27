@@ -21,7 +21,7 @@ app.get('/pantryItems', (req, res) => {
 
 app.post('/pantryItems', (req, res) => {
   var newItem = req.body.item;
-  PantryItem.findOne({name: newItem.name, brand: newItem.brand})
+  PantryItem.findOne({name: newItem.name})
     .exec((err, item) => {
       if (!item) {
         var newPantryItem = new PantryItem({

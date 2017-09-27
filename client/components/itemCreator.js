@@ -18,7 +18,8 @@ angular.module('pantry-app')
   .component('itemCreator', {
 
     bindings: {
-      onCreate: '<'
+      onCreate: '<',
+      itemToUpdate: '<'
     },
     controller: 'ItemCreatorController',
     templateUrl: 'client/templates/itemCreator.html'
