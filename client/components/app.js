@@ -15,10 +15,16 @@ angular.module('pantry-app')
 
     this.selectItem = (item) => {
       this.currentItem = item;
+      this.itemToUpdate = null;
     };
 
     this.updateSelect = (item) => {
+      console.log('before: ', this.itemToUpdate);
+      console.log('before: ', !!this.itemToUpdate);
+      this.itemToUpdate = undefined;
       this.itemToUpdate = item;
+      console.log('after: ', this.itemToUpdate);
+      console.log('after: ', !!this.itemToUpdate);
     };
 
     pantry.fetch(this.fetchResults);

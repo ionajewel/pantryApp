@@ -13,6 +13,7 @@ angular.module('pantry-app')
       this.brand = '';
       this.quantity = '';
       this.units = '';
+      this.itemToUpdate = null;
     };
   })
   .component('itemCreator', {
