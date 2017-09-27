@@ -1,8 +1,20 @@
-<div class="item-viewer">
+<!-- <div class="item-viewer">
   <div class="item-viewer-details media-body">
     <h3>{{$ctrl.item.name}}</h3>
     <div>Brand: {{$ctrl.item.brand}}</div>
     <div>Quantity: {{$ctrl.item.quantity}} {{$ctrl.item.units}}</div>
-    <button class="btn" ng-click="$ctrl.deleteItem()">delete this item</button>
+    <button type="button" class="btn btn-sm" ng-click="$ctrl.deleteItem()">delete this item</button>
+  </div>
+</div> -->
+
+<div class="item-viewer">
+  <div class="item-viewer-details card">
+    <div class="card-body">
+      <h4 class="card-title">{{$ctrl.item.name}}</h4>
+      <p class="card-text">Brand: {{$ctrl.item.brand}}</p>
+      <p class="card-text">Quantity: {{$ctrl.item.quantity}} {{$ctrl.item.units}}</p>
+      <a href="#" class="btn btn-primary" ng-click="$ctrl.deleteItem()">delete</a>
+      <a href="#" class="btn btn-primary" ng-click="$ctrl.updateItem()">update</a>
+    </div>
   </div>
 </div>

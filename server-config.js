@@ -38,7 +38,13 @@ app.post('/pantryItems', (req, res) => {
           }
         });
       } else {
-        res.send(item);
+        PantryItem.findOneAndUpdate({name: newItem.name}, {
+          brand: newItem.brand,
+          quanitity: newItem.quantity,
+          units: newItem.units
+        }).exec((err, item) => {
+          res.send(newItem._id);
+        });
       }
     });
 });
